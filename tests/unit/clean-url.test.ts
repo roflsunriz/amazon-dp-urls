@@ -28,6 +28,36 @@ describe("toCleanAmazonUrl", () => {
   });
 
   test.each([
+    "amazon.com",
+    "amazon.ca",
+    "amazon.com.mx",
+    "amazon.com.br",
+    "amazon.co.uk",
+    "amazon.de",
+    "amazon.fr",
+    "amazon.it",
+    "amazon.es",
+    "amazon.nl",
+    "amazon.pl",
+    "amazon.se",
+    "amazon.com.be",
+    "amazon.ie",
+    "amazon.com.tr",
+    "amazon.co.za",
+    "amazon.eg",
+    "amazon.sa",
+    "amazon.ae",
+    "amazon.in",
+    "amazon.co.jp",
+    "amazon.com.au",
+    "amazon.sg",
+  ])("%s の商品URLを正規化する", (host) => {
+    expect(toCleanAmazonUrl(`https://www.${host}/dp/B012345678?tag=test`)).toBe(
+      `https://www.${host}/dp/B012345678`,
+    );
+  });
+
+  test.each([
     "not a url",
     "https://example.com/dp/B012345678",
     "https://amazon.com.evil.example/dp/B012345678",

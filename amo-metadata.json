@@ -14,30 +14,30 @@
     "zh-CN": "Amazon Clean DP URL"
   },
   "summary": {
-    "ar": "انسخ روابط منتجات Amazon النظيفة من دون معلمات التتبع.",
-    "bn": "ট্র্যাকিং প্যারামিটার ছাড়াই পরিষ্কার Amazon পণ্যের URL কপি করুন।",
-    "en-US": "Copy clean Amazon product URLs without tracking parameters.",
-    "es": "Copia URL limpias de productos de Amazon sin parámetros de seguimiento.",
-    "fr": "Copiez des URL de produits Amazon épurées, sans paramètres de suivi.",
-    "hi": "ट्रैकिंग पैरामीटर के बिना साफ़ Amazon उत्पाद URL कॉपी करें।",
-    "ja": "Amazonの商品ページから、トラッキング情報を除いたクリーンなURLをコピーします。",
-    "pt-BR": "Copie URLs limpas de produtos da Amazon, sem parâmetros de rastreamento.",
-    "ru": "Копируйте чистые URL товаров Amazon без параметров отслеживания.",
-    "ur": "ٹریکنگ پیرامیٹرز کے بغیر صاف Amazon پروڈکٹ URLs کاپی کریں۔",
-    "zh-CN": "复制不含跟踪参数的简洁亚马逊商品网址。"
+    "ar": "نظّف روابط منتجات Amazon في متاجر البلدان المختلفة بواجهة تدعم 11 لغة.",
+    "bn": "11টি ভাষার ইন্টারফেসে বিভিন্ন দেশের Amazon পণ্যের URL পরিষ্কার করুন।",
+    "en-US": "Clean Amazon product URLs across country stores, with an interface available in 11 languages.",
+    "es": "Limpia URL de productos de Amazon de distintos países con una interfaz en 11 idiomas.",
+    "fr": "Nettoyez les URL produit des boutiques Amazon par pays, avec une interface en 11 langues.",
+    "hi": "11 भाषाओं वाले इंटरफ़ेस से अलग-अलग देशों के Amazon उत्पाद URL साफ़ करें।",
+    "ja": "各国のAmazon商品URLをワンクリックでクリーン化。インターフェースは11言語に対応。",
+    "pt-BR": "Limpe URLs de produtos das lojas Amazon de vários países com interface em 11 idiomas.",
+    "ru": "Очищайте URL товаров в магазинах Amazon разных стран с интерфейсом на 11 языках.",
+    "ur": "11 زبانوں کے انٹرفیس کے ساتھ مختلف ممالک کے Amazon پروڈکٹ URLs صاف کریں۔",
+    "zh-CN": "一键清理各国亚马逊商品网址，界面支持 11 种语言。"
   },
   "description": {
-    "ar": "انقر بزر الفأرة الأيمن على صفحة منتج في Amazon واختر نسخ الرابط النظيف. ينسخ الامتداد رابطًا بصيغة /dp/معرّف_المنتج من دون وسوم الإحالة أو عبارات البحث أو معلمات التتبع.",
-    "bn": "Amazon পণ্যের পৃষ্ঠায় ডান-ক্লিক করে পরিষ্কার URL কপি করার বিকল্পটি বেছে নিন। এক্সটেনশনটি রেফারেল ট্যাগ, সার্চ শব্দ বা ট্র্যাকিং প্যারামিটার ছাড়া /dp/পণ্য_আইডি আকারের URL কপি করে।",
-    "en-US": "Right-click an Amazon product page and choose Copy clean Amazon URL. The extension copies a URL in /dp/PRODUCT_ID form without referral tags, search terms, or tracking parameters.",
-    "es": "Haz clic con el botón derecho en una página de producto de Amazon y elige copiar la URL limpia. La extensión copia una URL con el formato /dp/ID_DEL_PRODUCTO sin etiquetas de referido, términos de búsqueda ni parámetros de seguimiento.",
-    "fr": "Faites un clic droit sur une page produit Amazon et choisissez de copier l’URL épurée. L’extension copie une URL au format /dp/ID_DU_PRODUIT sans balises d’affiliation, termes de recherche ni paramètres de suivi.",
-    "hi": "Amazon उत्पाद पेज पर राइट-क्लिक करके साफ़ URL कॉपी करने का विकल्प चुनें। एक्सटेंशन रेफ़रल टैग, खोज शब्द या ट्रैकिंग पैरामीटर के बिना /dp/उत्पाद_आईडी के रूप में URL कॉपी करता है।",
-    "ja": "Amazonの商品ページで右クリックし、「AmazonのクリーンURLをコピー」を選ぶだけで、/dp/商品ID 形式のURLをクリップボードへコピーします。紹介タグ、検索キーワード、トラッキング用パラメーターは含まれません。",
-    "pt-BR": "Clique com o botão direito em uma página de produto da Amazon e escolha copiar a URL limpa. A extensão copia uma URL no formato /dp/ID_DO_PRODUTO sem tags de indicação, termos de pesquisa ou parâmetros de rastreamento.",
-    "ru": "Щёлкните правой кнопкой мыши на странице товара Amazon и выберите копирование чистого URL. Расширение копирует URL вида /dp/ИДЕНТИФИКАТОР_ТОВАРА без реферальных меток, поисковых запросов и параметров отслеживания.",
-    "ur": "Amazon پروڈکٹ صفحے پر رائٹ کلک کرکے صاف URL کاپی کرنے کا اختیار منتخب کریں۔ ایکسٹینشن ریفرل ٹیگز، تلاش کے الفاظ یا ٹریکنگ پیرامیٹرز کے بغیر /dp/پروڈکٹ_آئی_ڈی کی شکل میں URL کاپی کرتا ہے۔",
-    "zh-CN": "在亚马逊商品页面上右键单击，然后选择复制简洁网址。扩展会复制 /dp/商品ID 格式的网址，不包含推广标签、搜索词或跟踪参数。"
+    "ar": "انقر بزر الفأرة الأيمن على أي صفحة منتج مدعومة في Amazon واختر نسخ رابط Amazon النظيف. يتعرف الامتداد على متاجر Amazon في مختلف البلدان، مثل amazon.com وamazon.co.jp وamazon.co.uk وamazon.de وغيرها من النطاقات المحلية، ويحوّل صفحات /dp/ و/gp/product/ و/gp/aw/d/ إلى رابط قصير بصيغة /dp/PRODUCT_ID. تُزال وسوم الإحالة وعبارات البحث ومعلمات التتبع. تتوفر الواجهة بـ11 لغة: العربية والبنغالية والإنجليزية والفرنسية والهندية واليابانية والبرتغالية والروسية والصينية المبسطة والإسبانية والأردية. تعمل كل المعالجة محليًا ولا تُجمع بيانات التصفح أو تُرسل.",
+    "bn": "সমর্থিত যেকোনো Amazon পণ্যের পৃষ্ঠায় ডান-ক্লিক করে পরিষ্কার Amazon URL কপি করার বিকল্পটি বেছে নিন। এক্সটেনশনটি amazon.com, amazon.co.jp, amazon.co.uk, amazon.de এবং অন্যান্য স্থানীয় ডোমেইনসহ বিভিন্ন দেশের Amazon স্টোর চিনতে পারে এবং /dp/, /gp/product/ ও /gp/aw/d/ পৃষ্ঠাকে ছোট /dp/PRODUCT_ID URL-এ রূপান্তর করে। রেফারেল ট্যাগ, সার্চ শব্দ ও ট্র্যাকিং প্যারামিটার বাদ যায়। ইন্টারফেসটি 11টি ভাষায় পাওয়া যায়: আরবি, বাংলা, ইংরেজি, ফরাসি, হিন্দি, জাপানি, পর্তুগিজ, রুশ, সরলীকৃত চীনা, স্প্যানিশ ও উর্দু। সব প্রক্রিয়াকরণ স্থানীয়ভাবে হয়; ব্রাউজিং ডেটা সংগ্রহ বা পাঠানো হয় না।",
+    "en-US": "Right-click any supported Amazon product page and choose Copy clean Amazon URL. The extension recognizes Amazon country stores worldwide—including amazon.com, amazon.co.jp, amazon.co.uk, amazon.de, and other local domains—and normalizes /dp/, /gp/product/, and /gp/aw/d/ pages to a short /dp/PRODUCT_ID URL. Referral tags, search terms, and tracking parameters are removed. The interface is available in 11 languages: Arabic, Bengali, English, French, Hindi, Japanese, Portuguese, Russian, Simplified Chinese, Spanish, and Urdu. Everything runs locally; no browsing data is collected or sent.",
+    "es": "Haz clic con el botón derecho en cualquier página de producto compatible de Amazon y elige copiar la URL limpia. La extensión reconoce tiendas de Amazon de distintos países, como amazon.com, amazon.co.jp, amazon.co.uk, amazon.de y otros dominios locales, y normaliza las páginas /dp/, /gp/product/ y /gp/aw/d/ a una URL corta /dp/ID_DEL_PRODUCTO. Elimina etiquetas de referido, términos de búsqueda y parámetros de seguimiento. La interfaz está disponible en 11 idiomas: árabe, bengalí, chino simplificado, español, francés, hindi, inglés, japonés, portugués, ruso y urdu. Todo se procesa localmente; no se recopilan ni envían datos de navegación.",
+    "fr": "Faites un clic droit sur toute page produit Amazon prise en charge et choisissez de copier l’URL épurée. L’extension reconnaît les boutiques Amazon de différents pays, notamment amazon.com, amazon.co.jp, amazon.co.uk, amazon.de et les autres domaines locaux, puis normalise les pages /dp/, /gp/product/ et /gp/aw/d/ en une URL courte /dp/ID_DU_PRODUIT. Les balises d’affiliation, termes de recherche et paramètres de suivi sont supprimés. L’interface est disponible en 11 langues : arabe, bengali, chinois simplifié, espagnol, français, hindi, anglais, japonais, portugais, russe et ourdou. Tout est traité localement ; aucune donnée de navigation n’est collectée ni envoyée.",
+    "hi": "समर्थित Amazon उत्पाद पेज पर राइट-क्लिक करके साफ़ Amazon URL कॉपी करने का विकल्प चुनें। एक्सटेंशन amazon.com, amazon.co.jp, amazon.co.uk, amazon.de और अन्य स्थानीय डोमेन सहित विभिन्न देशों के Amazon स्टोर पहचानता है और /dp/, /gp/product/ तथा /gp/aw/d/ पेज को छोटे /dp/PRODUCT_ID URL में बदलता है। रेफ़रल टैग, खोज शब्द और ट्रैकिंग पैरामीटर हटा दिए जाते हैं। इंटरफ़ेस 11 भाषाओं में उपलब्ध है: अरबी, बंगाली, अंग्रेज़ी, फ़्रेंच, हिंदी, जापानी, पुर्तगाली, रूसी, सरलीकृत चीनी, स्पैनिश और उर्दू। सारी प्रोसेसिंग स्थानीय रूप से होती है; ब्राउज़िंग डेटा न तो एकत्र किया जाता है, न भेजा जाता है।",
+    "ja": "対応するAmazon商品ページで右クリックし、「AmazonのクリーンURLをコピー」を選ぶだけです。amazon.com、amazon.co.jp、amazon.co.uk、amazon.deをはじめ、Amazonが展開する各国ストアのローカルドメインを認識し、/dp/、/gp/product/、/gp/aw/d/ の商品ページを短い /dp/商品ID URLへ統一します。紹介タグ、検索キーワード、トラッキングパラメーターは除去されます。インターフェースは、日本語、英語、中国語（簡体字）、ヒンディー語、スペイン語、フランス語、アラビア語、ポルトガル語、ベンガル語、ロシア語、ウルドゥー語の11言語に対応。処理はすべて端末内で行われ、閲覧データを収集・送信しません。",
+    "pt-BR": "Clique com o botão direito em qualquer página de produto compatível da Amazon e escolha copiar a URL limpa. A extensão reconhece lojas Amazon de vários países, incluindo amazon.com, amazon.co.jp, amazon.co.uk, amazon.de e outros domínios locais, e normaliza páginas /dp/, /gp/product/ e /gp/aw/d/ para uma URL curta /dp/ID_DO_PRODUTO. Tags de indicação, termos de pesquisa e parâmetros de rastreamento são removidos. A interface está disponível em 11 idiomas: árabe, bengali, chinês simplificado, espanhol, francês, hindi, inglês, japonês, português, russo e urdu. Todo o processamento é local; nenhum dado de navegação é coletado ou enviado.",
+    "ru": "Щёлкните правой кнопкой мыши на любой поддерживаемой странице товара Amazon и выберите копирование чистого URL. Расширение распознаёт магазины Amazon разных стран, включая amazon.com, amazon.co.jp, amazon.co.uk, amazon.de и другие локальные домены, и преобразует страницы /dp/, /gp/product/ и /gp/aw/d/ в короткий URL вида /dp/PRODUCT_ID. Реферальные метки, поисковые запросы и параметры отслеживания удаляются. Интерфейс доступен на 11 языках: арабском, бенгальском, английском, французском, хинди, японском, португальском, русском, упрощённом китайском, испанском и урду. Вся обработка выполняется локально; данные браузера не собираются и не отправляются.",
+    "ur": "کسی بھی معاون Amazon پروڈکٹ صفحے پر رائٹ کلک کرکے صاف Amazon URL کاپی کرنے کا اختیار منتخب کریں۔ ایکسٹینشن amazon.com، amazon.co.jp، amazon.co.uk، amazon.de اور دیگر مقامی ڈومینز سمیت مختلف ممالک کے Amazon اسٹورز پہچانتی ہے اور /dp/، /gp/product/ اور /gp/aw/d/ صفحات کو مختصر /dp/PRODUCT_ID URL میں تبدیل کرتی ہے۔ ریفرل ٹیگز، تلاش کے الفاظ اور ٹریکنگ پیرامیٹرز ہٹا دیے جاتے ہیں۔ انٹرفیس 11 زبانوں میں دستیاب ہے: عربی، بنگالی، انگریزی، فرانسیسی، ہندی، جاپانی، پرتگالی، روسی، آسان چینی، ہسپانوی اور اردو۔ تمام پراسیسنگ مقامی طور پر ہوتی ہے؛ براؤزنگ ڈیٹا جمع یا ارسال نہیں کیا جاتا۔",
+    "zh-CN": "在任意受支持的亚马逊商品页面上右键单击，然后选择复制简洁 Amazon 网址。扩展可识别各国 Amazon 商店，包括 amazon.com、amazon.co.jp、amazon.co.uk、amazon.de 及其他本地域名，并将 /dp/、/gp/product/ 和 /gp/aw/d/ 商品页面统一为简短的 /dp/商品ID 网址。推广标签、搜索词和跟踪参数都会被移除。界面支持 11 种语言：阿拉伯语、孟加拉语、英语、法语、印地语、日语、葡萄牙语、俄语、简体中文、西班牙语和乌尔都语。所有处理均在本地完成，不会收集或发送浏览数据。"
   },
   "categories": {
     "firefox": ["shopping"]

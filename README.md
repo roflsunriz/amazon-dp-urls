@@ -10,6 +10,10 @@ https://www.amazon.co.jp/dp/B012345678
 
 実装はTypeScriptです。ビルド時にBunで単一の `background.js` へまとめ、AMO提出物にはソースや開発依存関係を含めません。
 
+## 対応Amazonストア
+
+米国、日本、英国、ドイツをはじめ、Amazonが展開する各国ストアの商品URLに対応します。現在の公式ストアで使われる `.com`、`.ca`、`.com.mx`、`.com.br`、`.co.uk`、`.de`、`.fr`、`.it`、`.es`、`.nl`、`.pl`、`.se`、`.com.be`、`.ie`、`.com.tr`、`.co.za`、`.eg`、`.sa`、`.ae`、`.in`、`.co.jp`、`.com.au`、`.sg` のドメインを自動認識し、元の国別ドメインを維持します。
+
 ## 対応言語
 
 Firefoxの表示言語に合わせて、拡張機能名、説明、コンテキストメニューを次の言語で表示します。
@@ -79,6 +83,8 @@ bun run submit:amo
 ```
 
 `submit:amo` はlint後、`amo-metadata.json` の多言語掲載情報とビルド可能なソースアーカイブを添えてlisted（AMO公開）チャンネルへ提出します。認証情報はファイルへ保存しないでください。
+
+拡張機能名、概要、詳細説明は11ロケール分を `amo-metadata.json` から一括送信するため、AMO Developer Hubでロケールごとに手入力する必要はありません。
 
 ## その他
 

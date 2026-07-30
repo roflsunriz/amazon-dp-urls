@@ -125,5 +125,18 @@ describe("WebExtension locales", () => {
         );
       }
     }
+
+    for (const locale of expectedAmoLocales) {
+      const summary = (metadata.summary as Record<string, string>)[locale]!;
+      const description = (metadata.description as Record<string, string>)[
+        locale
+      ]!;
+
+      expect(summary).toContain("11");
+      expect(summary.length).toBeLessThanOrEqual(250);
+      expect(description).toContain("11");
+      expect(description).toContain("amazon.");
+      expect(description).toContain("/dp/");
+    }
   });
 });
