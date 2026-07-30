@@ -1,0 +1,21 @@
+{
+  "default_locale": "ja",
+  "name": {
+    "ja": "Amazon Clean DP URL"
+  },
+  "summary": {
+    "ja": "Amazonの商品ページから、トラッキング情報を除いたクリーンなURLをコピーします。"
+  },
+  "description": {
+    "ja": "Amazonの商品ページで右クリックし、「AmazonのクリーンURLをコピー」を選ぶだけで、https://www.amazon.co.jp/dp/商品ID 形式のURLをクリップボードへコピーします。紹介タグ、検索キーワード、トラッキング用パラメーターは含まれません。"
+  },
+  "categories": {
+    "firefox": [
+      "shopping"
+    ]
+  },
+  "requires_payment": false,
+  "version": {
+    "license": "MIT"
+  }
+}

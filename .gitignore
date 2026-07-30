@@ -1,0 +1,8 @@
+node_modules/
+dist/
+web-ext-artifacts/
+amazon-clean-dp-url.zip
+.web-extension-id
+.amo-upload-uuid
+tmp/
+COMMON-AGENTS.md
