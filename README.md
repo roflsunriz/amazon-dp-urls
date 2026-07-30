@@ -1,3 +1,5 @@
+[Firefox AMO 掲載ページ](https://addons.mozilla.org/ja/firefox/addon/amazon-clean-dp-url/)
+
 # Amazon Clean DP URL
 
 Amazonの商品ページで右クリックし、**「AmazonのクリーンURLをコピー」**を選ぶと、現在の商品URLを次の形式でクリップボードへコピーするFirefox拡張機能です。
