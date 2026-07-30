@@ -1,18 +1,46 @@
 {
-  "default_locale": "ja",
+  "default_locale": "en-US",
   "name": {
-    "ja": "Amazon Clean DP URL"
+    "ar": "Amazon Clean DP URL",
+    "bn": "Amazon Clean DP URL",
+    "en-US": "Amazon Clean DP URL",
+    "es": "Amazon Clean DP URL",
+    "fr": "Amazon Clean DP URL",
+    "hi": "Amazon Clean DP URL",
+    "ja": "Amazon Clean DP URL",
+    "pt-BR": "Amazon Clean DP URL",
+    "ru": "Amazon Clean DP URL",
+    "ur": "Amazon Clean DP URL",
+    "zh-CN": "Amazon Clean DP URL"
   },
   "summary": {
-    "ja": "Amazonの商品ページから、トラッキング情報を除いたクリーンなURLをコピーします。"
+    "ar": "انسخ روابط منتجات Amazon النظيفة من دون معلمات التتبع.",
+    "bn": "ট্র্যাকিং প্যারামিটার ছাড়াই পরিষ্কার Amazon পণ্যের URL কপি করুন।",
+    "en-US": "Copy clean Amazon product URLs without tracking parameters.",
+    "es": "Copia URL limpias de productos de Amazon sin parámetros de seguimiento.",
+    "fr": "Copiez des URL de produits Amazon épurées, sans paramètres de suivi.",
+    "hi": "ट्रैकिंग पैरामीटर के बिना साफ़ Amazon उत्पाद URL कॉपी करें।",
+    "ja": "Amazonの商品ページから、トラッキング情報を除いたクリーンなURLをコピーします。",
+    "pt-BR": "Copie URLs limpas de produtos da Amazon, sem parâmetros de rastreamento.",
+    "ru": "Копируйте чистые URL товаров Amazon без параметров отслеживания.",
+    "ur": "ٹریکنگ پیرامیٹرز کے بغیر صاف Amazon پروڈکٹ URLs کاپی کریں۔",
+    "zh-CN": "复制不含跟踪参数的简洁亚马逊商品网址。"
   },
   "description": {
-    "ja": "Amazonの商品ページで右クリックし、「AmazonのクリーンURLをコピー」を選ぶだけで、https://www.amazon.co.jp/dp/商品ID 形式のURLをクリップボードへコピーします。紹介タグ、検索キーワード、トラッキング用パラメーターは含まれません。"
+    "ar": "انقر بزر الفأرة الأيمن على صفحة منتج في Amazon واختر نسخ الرابط النظيف. ينسخ الامتداد رابطًا بصيغة /dp/معرّف_المنتج من دون وسوم الإحالة أو عبارات البحث أو معلمات التتبع.",
+    "bn": "Amazon পণ্যের পৃষ্ঠায় ডান-ক্লিক করে পরিষ্কার URL কপি করার বিকল্পটি বেছে নিন। এক্সটেনশনটি রেফারেল ট্যাগ, সার্চ শব্দ বা ট্র্যাকিং প্যারামিটার ছাড়া /dp/পণ্য_আইডি আকারের URL কপি করে।",
+    "en-US": "Right-click an Amazon product page and choose Copy clean Amazon URL. The extension copies a URL in /dp/PRODUCT_ID form without referral tags, search terms, or tracking parameters.",
+    "es": "Haz clic con el botón derecho en una página de producto de Amazon y elige copiar la URL limpia. La extensión copia una URL con el formato /dp/ID_DEL_PRODUCTO sin etiquetas de referido, términos de búsqueda ni parámetros de seguimiento.",
+    "fr": "Faites un clic droit sur une page produit Amazon et choisissez de copier l’URL épurée. L’extension copie une URL au format /dp/ID_DU_PRODUIT sans balises d’affiliation, termes de recherche ni paramètres de suivi.",
+    "hi": "Amazon उत्पाद पेज पर राइट-क्लिक करके साफ़ URL कॉपी करने का विकल्प चुनें। एक्सटेंशन रेफ़रल टैग, खोज शब्द या ट्रैकिंग पैरामीटर के बिना /dp/उत्पाद_आईडी के रूप में URL कॉपी करता है।",
+    "ja": "Amazonの商品ページで右クリックし、「AmazonのクリーンURLをコピー」を選ぶだけで、/dp/商品ID 形式のURLをクリップボードへコピーします。紹介タグ、検索キーワード、トラッキング用パラメーターは含まれません。",
+    "pt-BR": "Clique com o botão direito em uma página de produto da Amazon e escolha copiar a URL limpa. A extensão copia uma URL no formato /dp/ID_DO_PRODUTO sem tags de indicação, termos de pesquisa ou parâmetros de rastreamento.",
+    "ru": "Щёлкните правой кнопкой мыши на странице товара Amazon и выберите копирование чистого URL. Расширение копирует URL вида /dp/ИДЕНТИФИКАТОР_ТОВАРА без реферальных меток, поисковых запросов и параметров отслеживания.",
+    "ur": "Amazon پروڈکٹ صفحے پر رائٹ کلک کرکے صاف URL کاپی کرنے کا اختیار منتخب کریں۔ ایکسٹینشن ریفرل ٹیگز، تلاش کے الفاظ یا ٹریکنگ پیرامیٹرز کے بغیر /dp/پروڈکٹ_آئی_ڈی کی شکل میں URL کاپی کرتا ہے۔",
+    "zh-CN": "在亚马逊商品页面上右键单击，然后选择复制简洁网址。扩展会复制 /dp/商品ID 格式的网址，不包含推广标签、搜索词或跟踪参数。"
   },
   "categories": {
-    "firefox": [
-      "shopping"
-    ]
+    "firefox": ["shopping"]
   },
   "requires_payment": false,
   "version": {

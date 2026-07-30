@@ -3,16 +3,20 @@
 import { toCleanAmazonUrl } from "./clean-url";
 
 const MENU_ID = "copy-amazon-clean-dp-url";
-const DEFAULT_TITLE = "AmazonのクリーンURLをコピー";
+const menuTitle = browser.i18n.getMessage("contextMenuCopyCleanUrl");
+
+if (!menuTitle) {
+  throw new Error("Missing i18n message: contextMenuCopyCleanUrl");
+}
 
 browser.contextMenus.create({
   id: MENU_ID,
-  title: DEFAULT_TITLE,
+  title: menuTitle,
   contexts: ["all"],
   icons: {
     16: "icons/icon-16.png",
-    32: "icons/icon-32.png"
-  }
+    32: "icons/icon-32.png",
+  },
 });
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {

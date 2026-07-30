@@ -10,6 +10,22 @@ https://www.amazon.co.jp/dp/B012345678
 
 実装はTypeScriptです。ビルド時にBunで単一の `background.js` へまとめ、AMO提出物にはソースや開発依存関係を含めません。
 
+## 対応言語
+
+Firefoxの表示言語に合わせて、拡張機能名、説明、コンテキストメニューを次の言語で表示します。
+
+- 日本語
+- 英語（未対応言語のフォールバック）
+- 中国語（簡体字）
+- ヒンディー語
+- スペイン語
+- フランス語
+- アラビア語
+- ポルトガル語（ブラジル）
+- ベンガル語
+- ロシア語
+- ウルドゥー語
+
 ## セットアップ
 
 ```powershell
@@ -46,7 +62,7 @@ E2EはWindowsとデスクトップ版Firefoxを使用します。Firefoxが標�
 bun run build:amo
 ```
 
-検証に合格すると、`web-ext-artifacts/` にAMOへ手動アップロードできるZIPが生成されます。
+検証に合格すると、`web-ext-artifacts/` にAMOへ手動アップロードできる拡張機能ZIPと、レビュー担当者向けの再現可能なソースアーカイブが生成されます。
 
 この拡張機能は閲覧履歴や個人情報を収集・送信しません。その旨をFirefoxのデータ収集権限にも `none` として宣言しています。
 
@@ -62,7 +78,7 @@ $env:WEB_EXT_API_SECRET = "..."
 bun run submit:amo
 ```
 
-`submit:amo` はlint後、`amo-metadata.json` の日本語掲載情報を使ってlisted（AMO公開）チャンネルへ提出します。認証情報はファイルへ保存しないでください。
+`submit:amo` はlint後、`amo-metadata.json` の多言語掲載情報とビルド可能なソースアーカイブを添えてlisted（AMO公開）チャンネルへ提出します。認証情報はファイルへ保存しないでください。
 
 ## その他
 

@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "ایکسٹینشن کا نام۔"
+  },
+  "extensionDescription": {
+    "message": "Amazon پروڈکٹ صفحات کو ٹریکنگ پیرامیٹرز کے بغیر صاف /dp/ URL کے طور پر کاپی کرتا ہے۔",
+    "description": "ایکسٹینشن کی وضاحت۔"
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "صاف Amazon URL کاپی کریں",
+    "description": "موجودہ Amazon پروڈکٹ URL کاپی کرنے والا سیاقی مینو آئٹم۔"
+  }
+}

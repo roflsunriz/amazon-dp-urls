@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "اسم الامتداد."
+  },
+  "extensionDescription": {
+    "message": "ينسخ صفحات منتجات Amazon كعناوين URL نظيفة بصيغة /dp/ من دون معلمات تتبع.",
+    "description": "وصف الامتداد."
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "نسخ رابط Amazon النظيف",
+    "description": "عنصر قائمة السياق الذي ينسخ رابط منتج Amazon الحالي."
+  }
+}

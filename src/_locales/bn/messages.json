@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "এক্সটেনশনের নাম।"
+  },
+  "extensionDescription": {
+    "message": "ট্র্যাকিং প্যারামিটার ছাড়াই Amazon পণ্যের পৃষ্ঠা পরিষ্কার /dp/ URL হিসেবে কপি করে।",
+    "description": "এক্সটেনশনের বিবরণ।"
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "পরিষ্কার Amazon URL কপি করুন",
+    "description": "বর্তমান Amazon পণ্যের URL কপি করার কনটেক্সট মেনু আইটেম।"
+  }
+}

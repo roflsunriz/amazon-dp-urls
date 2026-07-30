@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "扩展名称。"
+  },
+  "extensionDescription": {
+    "message": "将亚马逊商品页面复制为不含跟踪参数的简洁 /dp/ URL。",
+    "description": "扩展说明。"
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "复制简洁的亚马逊网址",
+    "description": "用于复制当前亚马逊商品网址的上下文菜单项。"
+  }
+}

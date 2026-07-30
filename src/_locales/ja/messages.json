@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "拡張機能名。"
+  },
+  "extensionDescription": {
+    "message": "Amazonの商品ページを、トラッキングパラメーターのないクリーンな /dp/ URLとしてコピーします。",
+    "description": "拡張機能の説明。"
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "AmazonのクリーンURLをコピー",
+    "description": "現在のAmazon商品URLをコピーするコンテキストメニュー項目。"
+  }
+}

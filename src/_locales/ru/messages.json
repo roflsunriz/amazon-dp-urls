@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "Название расширения."
+  },
+  "extensionDescription": {
+    "message": "Копирует страницы товаров Amazon как чистые URL вида /dp/ без параметров отслеживания.",
+    "description": "Описание расширения."
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "Копировать чистый URL Amazon",
+    "description": "Пункт контекстного меню для копирования URL текущего товара Amazon."
+  }
+}

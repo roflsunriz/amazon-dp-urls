@@ -14,7 +14,7 @@ const result = await Bun.build({
   target: "browser",
   format: "iife",
   minify: false,
-  sourcemap: "none"
+  sourcemap: "none",
 });
 
 if (!result.success) {
@@ -27,9 +27,12 @@ if (!result.success) {
 
 await Promise.all([
   cp(resolve(sourceDir, "manifest.json"), resolve(outputDir, "manifest.json")),
+  cp(resolve(sourceDir, "_locales"), resolve(outputDir, "_locales"), {
+    recursive: true,
+  }),
   cp(resolve(sourceDir, "icons"), resolve(outputDir, "icons"), {
-    recursive: true
-  })
+    recursive: true,
+  }),
 ]);
 
 console.log(`Built extension: ${outputDir}`);

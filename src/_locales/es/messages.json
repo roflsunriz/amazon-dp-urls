@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Amazon Clean DP URL",
+    "description": "Nombre de la extensión."
+  },
+  "extensionDescription": {
+    "message": "Copia páginas de productos de Amazon como URL /dp/ limpias, sin parámetros de seguimiento.",
+    "description": "Descripción de la extensión."
+  },
+  "contextMenuCopyCleanUrl": {
+    "message": "Copiar URL limpia de Amazon",
+    "description": "Elemento del menú contextual que copia la URL del producto de Amazon actual."
+  }
+}
