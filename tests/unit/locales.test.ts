@@ -23,16 +23,12 @@ const expectedMessageKeys = [
   "extensionName",
 ] as const;
 const expectedAmoLocales = [
-  "ar",
-  "bn",
   "en-US",
-  "es",
+  "es-ES",
   "fr",
-  "hi",
   "ja",
   "pt-BR",
   "ru",
-  "ur",
   "zh-CN",
 ] as const;
 
@@ -98,7 +94,7 @@ describe("WebExtension locales", () => {
     expect(manifest.description).toBe("__MSG_extensionDescription__");
   });
 
-  test("AMO掲載情報の11言語に欠落や空文字がない", () => {
+  test("AMO掲載情報の本番対応7ロケールに欠落や空文字がない", () => {
     const metadata = readJson(resolve(projectRoot, "amo-metadata.json"));
 
     expect(isRecord(metadata)).toBe(true);

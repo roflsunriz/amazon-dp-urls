@@ -21,7 +21,7 @@ bun audit
 
 1. `src/_locales/<locale>/messages.json` を更新します。
 2. 新しいメッセージキーは全ロケールへ同時に追加します。
-3. 新しいロケールを追加した場合は、`tests/unit/locales.test.ts` の期待ロケール一覧と `amo-metadata.json` も更新します。
+3. 新しいロケールを追加した場合は、`tests/unit/locales.test.ts` の拡張機能ロケール一覧を更新します。AMO本番の対応ロケールである場合だけ、AMO用ロケール一覧と `amo-metadata.json` も更新します。AMOが受け付けないロケールは拡張機能内で対応していても掲載メタデータへ追加しません。
 4. 地域付きロケールは、`_locales` では `pt_BR` のようにアンダースコア、AMOメタデータでは `pt-BR` のようにハイフンを使用します。
 
 ## バージョン更新
