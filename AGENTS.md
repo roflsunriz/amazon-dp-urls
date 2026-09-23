@@ -15,7 +15,9 @@ Get-Content -Raw -LiteralPath .\COMMON-AGENTS.md
 
 ## Environment
 
-<必要に応じて適宜書き足すこと。>
+- Windows作業コピーは `core.autocrlf=true` のためCRLF、リポジトリ内はLF。`bun run format` が複数ファイルを変更表示しても内容差分がない場合（`git diff --stat` が空）は改行のみの差分なのでコミットせず `git checkout --` で戻す。CI（Linux/LF）では `format:check` が成功する。
+- Dependabot PRが古いまま残ると先行マージ済みの他PRと `package.json`/`bun.lock` で競合（`MERGEABLE: CONFLICTING`）する。解消手順：PRブランチに `origin/main` をマージし、`package.json` はPRの更新版とmain側の最新版を両方保持、`bun.lock` はmain側を取得後に `bun install` で再生成（`bun audit` で確認）、pushする。CI（verify/firefox-e2e/classify）が成功すれば自動マージされ、リモートブランチも自動削除される。残った追跡参照は `git fetch --prune` で掃除する。
+- Firefox E2Eはローカルで実行せずCIに任せる（ユーザーのメインブラウザFirefoxと競合するため）。
 
 ## 依存監査で確定した事項（2026-09-23）
 
