@@ -14,9 +14,10 @@ Get-Content -Raw -LiteralPath .\COMMON-AGENTS.md
    このファイルでは `amazon-dp-urls` 固有の補足だけを記載する。
 
 ## Environment
+
 <必要に応じて適宜書き足すこと。>
 
 ## 依存監査で確定した事項（2026-09-23）
 
 - `bun audit fix` だけでは adm-zip、brace-expansion、image-size の脆弱版が上流の厳密な依存範囲で残る。`package.json` の既存 `overrides` と `bun.lock` を同時に更新し、`bun audit` と関連テスト・ビルドで確認する。上流が安全版を取り込んだ場合は override の必要性を再評価する。
-- Firefox E2E は Windows runner の隔離したヘッドレス Firefox で実行し、OS クリップボードを操作する。失敗時もテストの `finally` で元の内容へ戻す。待機失敗では Amazon のメニュー、コピー、対象外ページのどこまで成功したかをログで判別する（`tests/e2e/context-menu.e2e.ts`）。
+- Firefox E2E は Windows runner の隔離したヘッドレス Firefox で実行し、OS クリップボードを操作する。ローカル実行時は `finally` で元の内容へ戻し、元が空なら Windows Forms で消去する。CI の使い捨て runner では復元を省き、失敗時の本来の原因を隠さない。待機失敗では Amazon のメニュー、コピー、対象外ページのどこまで成功したかをログで判別する（`tests/e2e/context-menu.e2e.ts`）。

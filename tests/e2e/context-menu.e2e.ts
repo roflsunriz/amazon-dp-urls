@@ -33,6 +33,24 @@ async function getClipboard(): Promise<string> {
   return stdout.trim();
 }
 
+async function restoreClipboard(text: string): Promise<void> {
+  try {
+    if (text === "") {
+      await execFileAsync("powershell.exe", [
+        "-NoProfile",
+        "-STA",
+        "-Command",
+        "Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::Clear()",
+      ]);
+    } else {
+      await setClipboard(text);
+    }
+  } catch {
+    // The original clipboard content may be sensitive; do not include it in errors.
+    throw new Error("Failed to restore the clipboard after E2E");
+  }
+}
+
 const options = new firefox.Options();
 const firefoxBinary =
   process.env.FIREFOX_BINARY ??
@@ -55,7 +73,11 @@ const driver = (await new Builder()
 let originalClipboard: string | null = null;
 
 try {
-  originalClipboard = await getClipboard();
+  // GitHub's Windows runner is disposable. Preserve the user's clipboard only
+  // for a local run, where the test shares the desktop clipboard.
+  if (process.env.CI !== "true") {
+    originalClipboard = await getClipboard();
+  }
   const addonId = await driver.installAddon(extensionDir, true);
   assert.equal(
     addonId,
@@ -146,7 +168,7 @@ try {
 } finally {
   try {
     if (originalClipboard !== null) {
-      await setClipboard(originalClipboard);
+      await restoreClipboard(originalClipboard);
     }
   } finally {
     await driver.quit();
