@@ -21,7 +21,7 @@ jobs:
       - name: Set up Bun
         uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
-          bun-version: '1.4.0'
+          bun-version: "1.4.0"
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
       - name: Audit dependencies
@@ -37,8 +37,7 @@ jobs:
 
   firefox-e2e:
     runs-on: windows-latest
-    env:
-      MOZ_HEADLESS: '1'
+    # The isolated hosted desktop is needed to test the OS clipboard.
     steps:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -47,7 +46,7 @@ jobs:
       - name: Set up Bun
         uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
-          bun-version: '1.4.0'
+          bun-version: "1.4.0"
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
       - name: Test extension in Firefox
