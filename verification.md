@@ -11,3 +11,5 @@
 監査では adm-zip、brace-expansion、image-size を含む推移依存の旧版が検出された。Bun 1.4.0 で lockfile の固定インストールと再監査を行い、既知脆弱性 0 件を確認した。書式・型・lint・単体テスト成功。Firefox E2E は隔離した Windows CI で確認する。
 
 初回の Windows CI では Firefox E2E が10秒待機で失敗した。失敗点を特定するため段階ログと各待機のエラー理由を追加し、OS クリップボードを検証後に復元する。再実行で成功するまでは E2E を確認済みとしない。
+
+大量の Dependabot PR により CI 完了より分類が遅れる場合でも、分類後の `workflow_dispatch` が現在の PR 番号と head SHA を照合して再評価する。別の作成者、古い SHA、未完了の CI はマージしない。
