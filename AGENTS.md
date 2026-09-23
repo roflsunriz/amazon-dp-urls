@@ -15,3 +15,7 @@ Get-Content -Raw -LiteralPath .\COMMON-AGENTS.md
 
 ## Environment
 <必要に応じて適宜書き足すこと。>
+
+## 依存監査で確定した事項（2026-09-23）
+
+- `bun audit fix` だけでは adm-zip、brace-expansion、image-size の脆弱版が上流の厳密な依存範囲で残る。`package.json` の既存 `overrides` と `bun.lock` を同時に更新し、`bun audit` と関連テスト・ビルドで確認する。上流が安全版を取り込んだ場合は override の必要性を再評価する。
