@@ -52,8 +52,10 @@ const driver = (await new Builder()
   .setFirefoxOptions(options)
   .setFirefoxService(service)
   .build()) as firefox.Driver;
+let originalClipboard: string | null = null;
 
 try {
+  originalClipboard = await getClipboard();
   const addonId = await driver.installAddon(extensionDir, true);
   assert.equal(
     addonId,
@@ -63,6 +65,7 @@ try {
 
   await setClipboard("E2E_NOT_COPIED");
   await driver.get(productUrl);
+  console.log("E2E: Amazon product page loaded");
 
   const body = await driver.wait(until.elementLocated(By.css("body")), 20_000);
   await driver.actions().contextClick(body).perform();
@@ -100,14 +103,21 @@ try {
     /moz-extension:\/\/.+\/icons\/icon-(?:16|32|48|96|128)\.png/,
     "独自アイコンがコンテキストメニューへ適用されていません。",
   );
+  console.log("E2E: Amazon context menu verified");
   await menuItem.click();
   await driver.setContext(firefox.Context.CONTENT);
 
-  await driver.wait(async () => (await getClipboard()) === expectedUrl, 10_000);
+  await driver.wait(
+    async () => (await getClipboard()) === expectedUrl,
+    10_000,
+    "Amazon URL was not copied to the clipboard",
+  );
   assert.equal(await getClipboard(), expectedUrl);
+  console.log("E2E: Amazon clean URL copied");
 
   await setClipboard("E2E_NON_AMAZON_UNCHANGED");
   await driver.get("https://example.com/");
+  console.log("E2E: non-Amazon page loaded");
   const nonAmazonBody = await driver.wait(
     until.elementLocated(By.css("body")),
     20_000,
@@ -119,6 +129,7 @@ try {
       By.css('#contentAreaContextMenu menuitem[image*="/icons/icon-"]'),
     ),
     10_000,
+    "Extension context menu is missing on non-Amazon page",
   );
   await nonAmazonMenuItem.click();
   await driver.setContext(firefox.Context.CONTENT);
@@ -133,5 +144,11 @@ try {
     "E2E passed: Firefox menu/icon → clean URL → clipboard; non-Amazon no-op",
   );
 } finally {
-  await driver.quit();
+  try {
+    if (originalClipboard !== null) {
+      await setClipboard(originalClipboard);
+    }
+  } finally {
+    await driver.quit();
+  }
 }
