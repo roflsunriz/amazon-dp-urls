@@ -8,6 +8,7 @@
 
 ### Security
 
+- 開発時の依存監査で検出された16件の脆弱性を解消するため、brace-expansion を5.0.12へ、fast-uri を3.1.8へ、undici を7.29.1へ更新した。
 - 既知の脆弱性を解消するため、上流依存が旧版へ固定する adm-zip、brace-expansion、image-size を安全な patch 版へ更新し、Bun のロックファイルを再生成した。
 
 ### Fixed
@@ -22,6 +23,8 @@
 
 ### Changed
 
+- Firefox拡張の検証に使う web-ext、Selenium、Firefox APIの型定義を互換性のある最新版へ更新した。
+- 上流が安全版を取り込んだ adm-zip と image-size の固定を解除し、image-size と shell-quote の関連更新を取り込んだ。
 - 依存更新を安全に省力化するため、Dependabot の patch／minor PR を既存 CI の全チェック成功後に自動取り込みし、失敗ジョブを一度再実行する設定を追加した。
 - 表示言語に関係なくE2Eを実行できるように、コンテキストメニューの検出を翻訳文言から安定した構造とアイコン属性へ変更しました。
 - AMO掲載ページでも各対応言語の概要と説明を表示できるように、提出メタデータを多言語化しました。
