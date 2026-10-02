@@ -1,8 +1,16 @@
 # 検証手順
 
+## 依存更新の再確認（2026-10-02）
+
+PR #5のweb-ext 10.7.0とPR #6のPrettier 3.9.9は、既存の開発依存にある16件の脆弱性でCIの監査が失敗していた。fast-uri 3.1.8、undici 7.29.1への依存範囲内更新と、brace-expansion overrideの5.0.12への更新後、Bun 1.4.0の固定インストール・監査で脆弱性0件を確認した。Selenium 4.50.0とFirefox API型定義143.0.1も更新対象とした。
+
+adm-zipは上流の依存範囲内で0.6.1が選ばれ、image-sizeは上流が2.0.4を固定しているため、両者のoverrideは削除した。shell-quoteは上流の固定をoverrideで1.11.0へ更新した。
+
+固定インストール、監査、書式、型チェック、lint（エラー・警告0件）、単体テスト47件、AMO用拡張ZIPとソースアーカイブ生成が成功した。検証には `bun install --frozen-lockfile`、`bun audit`、`bun run format:check`、`bun run type-check`、`bun run lint`、`bun run test`、`bun run build:amo` を使う。Firefox E2EはユーザーのローカルFirefoxを操作せず、隔離したWindows CIの同じhead SHAで成功した結果を確認してからマージする。
+
 ## Dependabot 自動処理（2026-09-23）
 
-`.github/workflows/dependabot-automation.yml` を actionlint で検査し、PR 用 workflow 名（CI）と一致することを確認する。Dependabot の patch／minor かつ全 PR チェック成功の場合だけ取り込み、major・古い SHA・再失敗は残す。
+`.github/workflows/dependabot-automation.yml` を actionlint で検査し、PR 用 workflow 名（CI）と一致することを確認する。Dependabot の patch／minor／major かつ全 PR チェック成功の場合だけ取り込み、古い SHA・再失敗は取り込まない。
 
 実際の Dependabot PR がまだない場合、動作経路は未検証として扱う。実 PR 発生後に自動化ジョブ、CI の再試行、マージ結果を確認する。
 
