@@ -8,6 +8,10 @@
 
 ### Security
 
+- 失敗した依存監査を誤って成功扱いしないよう、node-forgeの修正版未公開とweb-extの必要な利用経路を検証記録へ明記した。
+
+### Security
+
 - 開発時の依存監査で検出された16件の脆弱性を解消するため、brace-expansion を5.0.12へ、fast-uri を3.1.8へ、undici を7.29.1へ更新した。
 - 既知の脆弱性を解消するため、上流依存が旧版へ固定する adm-zip、brace-expansion、image-size を安全な patch 版へ更新し、Bun のロックファイルを再生成した。
 
