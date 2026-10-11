@@ -19,6 +19,7 @@ const rootFiles = [
 ];
 const sourcePatterns = [
   "assets/**/*",
+  "patches/**/*",
   "scripts/**/*",
   "src/**/*",
   "tests/**/*",
