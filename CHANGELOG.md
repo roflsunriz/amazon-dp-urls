@@ -23,6 +23,8 @@
 
 ### Changed
 
+- 不具合・機能提案などの受付とPRの記入形式を揃え、プロジェクト固有の確認項目を残した。 READMEは既存の意味と手順を保ち、実装と異なる説明や読みにくい表現を修正した。
+
 - Firefox拡張の検証に使う web-ext、Selenium、Firefox APIの型定義を互換性のある最新版へ更新した。
 - Markdownの整形修正を取り込むため、Prettierを3.9.9へ更新した。
 - 上流が安全版を取り込んだ adm-zip と image-size の固定を解除し、image-size と shell-quote の関連更新を取り込んだ。
