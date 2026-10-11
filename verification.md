@@ -8,6 +8,28 @@ adm-zipは上流の依存範囲内で0.6.1が選ばれ、image-sizeは上流が2
 
 固定インストール、監査、書式、型チェック、lint（エラー・警告0件）、単体テスト47件、AMO用拡張ZIPとソースアーカイブ生成が成功した。検証には `bun install --frozen-lockfile`、`bun audit`、`bun run format:check`、`bun run type-check`、`bun run lint`、`bun run test`、`bun run build:amo` を使う。Firefox E2EはユーザーのローカルFirefoxを操作せず、隔離したWindows CIの同じhead SHAで成功した結果を確認してからマージする。
 
+PR #5のhead `64e70a2ccefacf1e658482ccd691889456d0871c` では、[CI](https://github.com/roflsunriz/amazon-dp-urls/actions/runs/36943741389) のverifyとFirefox E2Eが両方成功し、mainへ取り込まれた。PR #6へmainを通常マージし、既存の安全な依存更新とPrettier 3.9.9を保持してロックファイルの競合を再生成で解消した。
+
+その後の再監査では、[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv) がnode-forge 1.4.0についてHighとして検出された。npm公開最新版1.4.0も影響範囲にあり、公開修正版はない（2026-10-02確認）。`bun audit fix` は0件と表示したが、直後の `bun audit` はこの1件で失敗したため、fixの表示だけでは解消と判断しない。上流の[修正PR #1152](https://github.com/digitalbazaar/forge/pull/1152) は未マージ。PR #6は監査失敗を理由にマージを保留している。
+
+mainの実コミット `0840244bef0bb4680ccec71a9d5bc565c9fbf4d7` で[CIを再実行](https://github.com/roflsunriz/amazon-dp-urls/actions/runs/36944626558)し、Firefox E2E成功・依存監査失敗を確認した。失敗は上記node-forgeの1件であり、PR #5マージ時の監査成功を現在の安全性の根拠にはしない。
+
+### node-forgeの影響と上流修正の評価
+
+依存経路はweb-ext → @devicefarmer/adbkit → node-forge。ADBKitのTCP/USBブリッジでは `dist/src/adb/tcpusb/socket.js` の署名検証がnode-forgeを呼び、`auth.js` は公開指数3も許容する。web-extはAndroid用ADBクライアントとしてADBKitを使用するが、このプロジェクトからTCP/USBブリッジのサーバーを起動する経路は確認できなかった。配布拡張はbackground.js・manifest・icons・localesのみで、node-forgeとADBKitを含まない。ただし開発依存のHighとして監査を通過させない。
+
+上流PR #1152のhead `ceba34402e329f0365134f23fe19898756527d65` は、DigestInfoの外側の要素数に加えて、内側DigestAlgorithmをOIDと任意NULLだけに制限する小さな修正だった。差分をレビュー後、インストール済みnode-forgeの隔離コピーにこの条件だけを適用した。公開指数3の鍵で、NULLあり・なしの正常署名は両方受理し、不正な要素をNULL後・NULLなし・NULL前に置く3ケースは現行版で受理、修正コピーではすべて拒否することを確認した。異なるダイジェストは双方で拒否した。
+
+この限定検証は上流ライブラリ全体の互換性を保証しない。また、Bunの監査はパッケージバージョンを照合するため、1.4.0へローカルパッチを当てても、このアドバイザリの失敗は解消しない。2026-10-02時点では監査抑制・版番号の偽装・未マージコードの本番採用は行わず、公開修正版または検証可能な上流依存の置き換えが必要なブロッカーとして扱った。
+
+## PR #6 の依存修正（2026-10-11）
+
+node-forgeの公開最新版は1.4.0で、[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv)に修正版は登録されていない。上流[PR #1152](https://github.com/digitalbazaar/forge/pull/1152)は未マージである。PR #6には、この上流差分を `bun patch` で `patches/node-forge@1.4.0.patch` に保存した。`tests/unit/node-forge-security.test.ts` は公開指数3の鍵で、正常なDigestInfoのNULLあり・なしを受理し、DigestAlgorithm内に余分な要素がある3ケースを拒否することを検証する。
+
+`bun audit` はパッチ適用後も版番号だけで上記1件を報告する。CIの `bun run audit:patched` は回帰テストが成功した後に限り、このIDだけを除外して他の依存を監査する。別途検出された[source-map-jsのGHSA-68fv-2mgg-jv7q](https://github.com/advisories/GHSA-68fv-2mgg-jv7q)は公開修正版1.2.2へ更新し、除外しない。Prettier 3.9.10とSelenium 4.51.0も公開最新版として取り込んだ。上流修正版の公開後はパッチと監査例外を外し、全監査を再実行する。
+
+提出用ソースアーカイブからも同じパッチ済み依存を再現できるよう、`scripts/build-source.ts` の収集対象へ `patches/**/*` を追加した。`bun run build:amo` が成功し、ソースアーカイブにはパッチ、配布ZIPには依存が含まれないことを確認した。
+
 ## Dependabot 自動処理（2026-09-23）
 
 `.github/workflows/dependabot-automation.yml` を actionlint で検査し、PR 用 workflow 名（CI）と一致することを確認する。Dependabot の patch／minor／major かつ全 PR チェック成功の場合だけ取り込み、古い SHA・再失敗は取り込まない。
