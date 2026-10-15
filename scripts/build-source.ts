@@ -13,6 +13,7 @@ const rootFiles = [
   "README.md",
   "amo-metadata.json",
   "bun.lock",
+  "findings.md",
   "how-to-update.md",
   "package.json",
   "tsconfig.json",

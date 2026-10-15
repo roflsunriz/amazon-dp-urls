@@ -86,3 +86,7 @@ Dependabot は対象の依存関係を毎週確認します。patch／minor／ma
 - [README.md](README.md): 利用者向けの導入と操作。
 - [verification.md](verification.md): 検証手順、実測結果、未確認事項。
 - [how-to-update.md](how-to-update.md): 更新・復旧の実手順。
+
+## AMOソースアーカイブの文書同梱
+
+`scripts/build-source.ts` は明示した `rootFiles` だけをソースアーカイブへ追加する。READMEの開発知見を分離したため、同じ参照先をレビュー担当者が読めるよう `findings.md` も対象に含める。配布拡張ZIPには開発文書を追加しない。確認は `bun run build:source` 後にソースTAR.GZのエントリと文書内容を照合する。
