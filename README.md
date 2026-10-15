@@ -48,19 +48,7 @@ bun run dev
 
 ## テスト
 
-URL正規化の単体テストを実行します。
-
-```powershell
-bun run test
-```
-
-実Firefoxで次の項目を検証します。一時インストール、コンテキストメニューと独自アイコンの表示、クリック、OSクリップボードへのコピーを確認します。Amazon以外ではクリップボードが変わらないことも確認します。
-
-```powershell
-bun run test:e2e
-```
-
-E2EはWindowsとデスクトップ版Firefoxを使用します。Firefoxが標準の場所にない場合は、`FIREFOX_BINARY` 環境変数に `firefox.exe` の絶対パスを指定してください。単体テストとE2Eを続けて実行する場合は `bun run test:all` を使用します。
+この内容は [findings.md](findings.md#readme-1) にまとめています。
 
 ## AMO提出用ZIPを作る
 
@@ -90,14 +78,12 @@ bun run submit:amo
 
 ## その他
 
-TypeScript、ビルド結果、マニフェストを検証する場合は、次を実行します。
-
-```powershell
-bun run lint
-```
-
-拡張機能IDは `src/manifest.json` の `browser_specific_settings.gecko.id` に固定済みです。公開後は同じIDを変更しないでください。
+この内容は [findings.md](findings.md#readme-2) にまとめています。
 
 ## 依存更新の自動処理
 
-Dependabot は対象の依存関係を毎週確認します。patch／minor／major 更新は PR のチェック（CI）が成功した後に自動で squash merge されます。CI の失敗ジョブは 1 回だけ再実行します。再失敗時は指定した lockfile を再生成し、CI を再実行します。互換性や監査に問題がある更新は、修正後の CI 成功を確認するまで取り込みません。
+この内容は [findings.md](findings.md#readme-3) にまとめています。
+
+## 開発時の参照先
+
+プロジェクト固有の構成・環境・調査知見は [findings.md](findings.md)、作業規範は [AGENTS.md](AGENTS.md)、検証記録は [verification.md](verification.md) を参照してください。
