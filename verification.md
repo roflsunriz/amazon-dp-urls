@@ -1,5 +1,10 @@
 # 検証手順
 
+## 2026-10-19: CI高速化
+
+- 変更したGitHub Actionsをactionlint 1.7.12で検査し、エラー0件を確認した。
+- GitHub上の未解決Dependabot更新PRと依存脆弱性アラートがともに0件であることを確認した。
+
 ## 依存更新の再確認（2026-10-02）
 
 PR #5のweb-ext 10.7.0とPR #6のPrettier 3.9.9は、既存の開発依存にある16件の脆弱性でCIの監査が失敗していた。fast-uri 3.1.8、undici 7.29.1への依存範囲内更新と、brace-expansion overrideの5.0.12への更新後、Bun 1.4.0の固定インストール・監査で脆弱性0件を確認した。Selenium 4.50.0とFirefox API型定義143.0.1も更新対象とした。
