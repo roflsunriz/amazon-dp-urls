@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import forge from "node-forge";
 
-describe("node-forge RSA DigestInfo patch", () => {
+describe("node-forge RSA DigestInfo validation", () => {
   const { privateKey, publicKey } = forge.pki.rsa.generateKeyPair({
     bits: 1024,
     e: 0x03,
