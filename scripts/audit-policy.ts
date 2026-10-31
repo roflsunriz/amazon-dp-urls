@@ -5,6 +5,25 @@ export const deepmergeAdvisory =
 export const minimatchAdvisory =
   "https://github.com/advisories/GHSA-g3hv-75wg-m249";
 
+export function verifyDeepmergeLayout(packages: Record<string, unknown>): void {
+  const entries = Object.entries(packages).filter(
+    ([key, entry]) =>
+      key === "deepmerge" ||
+      key.endsWith("/deepmerge") ||
+      (Array.isArray(entry) &&
+        typeof entry[0] === "string" &&
+        entry[0].startsWith("deepmerge@")),
+  );
+  assert.deepEqual(
+    entries.map(([key]) => key),
+    ["deepmerge"],
+    "未確認のdeepmerge配置があります",
+  );
+  const entry = entries[0]?.[1];
+  assert.ok(Array.isArray(entry));
+  assert.equal(entry[0], "deepmerge@4.3.1", "未確認のdeepmerge版です");
+}
+
 export function validateAuditReport(
   report: unknown,
   exitCode: number | null,

@@ -8,6 +8,7 @@
 
 ### Security
 
+- 依存監査で deepmerge の全配置を照合し、未検証の追加コピーや異なる版を拒否するようにした。
 - 開発ツールの node-forge、fast-uri、undici を修正版へ更新し、deepmerge には公開修正版まで限定パッチと攻撃回帰を適用した。minimatch 3 の実装と監査対象も検証し、未知の警告は失敗させる。
 
 ### Changed

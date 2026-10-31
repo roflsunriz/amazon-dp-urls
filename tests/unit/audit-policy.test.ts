@@ -3,6 +3,7 @@ import {
   deepmergeAdvisory,
   minimatchAdvisory,
   validateAuditReport,
+  verifyDeepmergeLayout,
 } from "../../scripts/audit-policy";
 
 test("監査は既知の修復対象以外を拒否する", () => {
@@ -41,4 +42,26 @@ test("監査は既知の修復対象以外を拒否する", () => {
     validateAuditReport({ deepmerge: [{ url: deepmergeAdvisory }] }, 0),
   ).toThrow();
   expect(() => validateAuditReport({}, 2)).toThrow();
+});
+
+test("未確認のdeepmergeコピーを拒否する", () => {
+  expect(() =>
+    verifyDeepmergeLayout({ deepmerge: ["deepmerge@4.3.1"] }),
+  ).not.toThrow();
+  expect(() => verifyDeepmergeLayout({})).toThrow();
+  expect(() =>
+    verifyDeepmergeLayout({
+      deepmerge: ["deepmerge@4.3.1"],
+      "other/deepmerge": null,
+    }),
+  ).toThrow();
+  expect(() =>
+    verifyDeepmergeLayout({ deepmerge: ["deepmerge@5.0.0"] }),
+  ).toThrow();
+  expect(() =>
+    verifyDeepmergeLayout({
+      deepmerge: ["deepmerge@4.3.1"],
+      "other/deepmerge": ["deepmerge@4.3.1"],
+    }),
+  ).toThrow();
 });

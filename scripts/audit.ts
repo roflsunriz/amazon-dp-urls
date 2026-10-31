@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { validateAuditReport } from "./audit-policy";
+import { validateAuditReport, verifyDeepmergeLayout } from "./audit-policy";
 const patchPath = "patches/deepmerge@4.3.1.patch";
 const expectedHashes: Record<string, string> = {
   [patchPath]:
@@ -64,6 +64,7 @@ assert.equal(
 const lock = Bun.JSON5.parse(readFileSync("bun.lock", "utf8")) as {
   packages: Record<string, unknown>;
 };
+verifyDeepmergeLayout(lock.packages);
 const minimatches = Object.entries(lock.packages).filter(
   ([, entry]) =>
     Array.isArray(entry) &&
