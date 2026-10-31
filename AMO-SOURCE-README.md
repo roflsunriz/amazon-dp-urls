@@ -19,7 +19,7 @@ bun install --frozen-lockfile
 bun run build
 ```
 
-The archive includes `patches/node-forge@1.4.0.patch`; Bun applies this security patch during the locked install.
+The archive includes `patches/deepmerge@4.3.1.patch`; Bun applies this security patch during the locked install. The security checks verify the patch and the relevant dependency behavior.
 
 The complete extension is written to `dist/`. Compare that directory with the submitted extension package. The build does not minify the output and does not generate source maps. No environment variables, API credentials, network services, or private dependencies are needed to build it after installing the locked dependencies.
 

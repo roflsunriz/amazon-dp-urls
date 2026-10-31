@@ -6,6 +6,10 @@
 
 ## [Unreleased]
 
+### Security
+
+- 開発ツールの node-forge、fast-uri、undici を修正版へ更新し、deepmerge には公開修正版まで限定パッチと攻撃回帰を適用した。minimatch 3 の実装と監査対象も検証し、未知の警告は失敗させる。
+
 ### Changed
 
 - 重複するCI実行を自動で取り消し、Bunの依存キャッシュをLinux検証とWindows Firefox E2Eで再利用して待ち時間を短縮した。

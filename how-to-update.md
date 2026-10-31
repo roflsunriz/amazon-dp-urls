@@ -59,8 +59,6 @@ bun run build:amo
 
 ## Dependabot PR の更新
 
-
-
 Dependabot version update は毎月28日00:00、検証済み PR の自動マージは同日18:00（いずれも `Asia/Tokyo`）にまとめます。28日より前に自動マージせず、現在の head SHA と全 PR チェックを月末処理で再確認します。
 前提は `.github/dependabot.yml` と PR 用 CI（CI）です。更新 PR の head SHA と `gh pr checks <PR番号>` の結果を確認してください。patch／minor／major は全チェック成功後に自動取り込みされます。初回 CI 失敗は failed jobs のみを 1 回再実行し、再失敗時は指定した lockfile を再生成し、CI を再実行します。
 
@@ -72,6 +70,6 @@ Dependabot version update は毎月28日00:00、検証済み PR の自動マー�
 
 `package.json` の `overrides` は、上流が固定した依存に対して、検証済みの brace-expansion と shell-quote を選ぶために使う。adm-zip と image-size は上流が安全版へ更新したため、個別の固定を外した。上流が安全版を採用したら残る override も減らせるか確認する。更新時は `bun install --lockfile-only --ignore-scripts`、`bun install --frozen-lockfile`、`bun audit` を実行し、該当する lint・型・テスト・ビルドを確認する。問題があれば更新コミットを revert し、lockfile と package.json を同じ版へ戻す。
 
-node-forge 1.4.0の公開修正版がない間は、`patches/node-forge@1.4.0.patch` がRSA検証を修正する。`bun run audit:patched` は回帰テストに合格した場合だけ、このパッチ済み版に対するGHSA-86w9-cpqp-85rvの版番号ベースの警告を除いて監査する。`bun audit` の全結果も確認し、ほかの警告は解消する。公開修正版が出たらパッチ、回帰テスト、監査例外の要否を確認する。
+node-forge は公開修正版 1.4.2 を使用し、正常・不正な署名構造の回帰検査を維持する。deepmerge 4.3.1 は公開修正版が出るまで `patches/deepmerge@4.3.1.patch` を適用する。`bun run audit:patched` はパッチと実ファイルのハッシュ、攻撃回帰、minimatch 3 の実装と非増幅を確認し、対象の2件だけを明示したうえで検証する。他の警告、版の変化、検証失敗は監査を失敗させる。公開修正版が出たらパッチと限定判定を見直す。
 
 CI 完了より Dependabot の分類が遅れる場合は、`callback_workflow_file` が指す呼び出し側 workflow を `workflow_dispatch` し、同じ PR 番号・head SHA・全チェックを再確認する。呼び出し側のファイル名を変える際はこの入力も一緒に更新する。

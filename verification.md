@@ -1,5 +1,11 @@
 # 検証手順
 
+## 2026-10-31: Dependabot 更新と依存監査
+
+- node-forge 1.4.2 で正常な署名構造の受理と不正な要素の拒否を確認した。fast-uri 3.1.9 と undici 7.30.1 を固定し、deepmerge 4.3.1 の両マージ経路の限定パッチ・攻撃回帰と、minimatch 3.1.5 のソース・非増幅を確認した。
+- raw監査には deepmerge と minimatch の2件が残る。`bun run audit:patched` は版・パッチ・実ファイルのハッシュと回帰を検証し、対象2件以外や監査自体の失敗を拒否する。
+- 整形、型検査、web-ext lint、単体56件、AMOソースアーカイブ内のパッチ・監査ファイルを確認した。隔離したheadless Firefoxで拡張を一時インストールして有効化を確認した。クリップボードを使う実操作はWindows CIで確認する。
+
 ## 2026-10-19: CI高速化
 
 - 変更したGitHub Actionsをactionlint 1.7.12で検査し、エラー0件を確認した。
