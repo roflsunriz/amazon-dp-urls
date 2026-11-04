@@ -58,7 +58,7 @@ assert.equal(
 assert.equal(
   JSON.parse(readFileSync("node_modules/node-forge/package.json", "utf8"))
     .version,
-  "1.4.2",
+  "1.4.3",
 );
 
 const lock = Bun.JSON5.parse(readFileSync("bun.lock", "utf8")) as {

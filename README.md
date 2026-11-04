@@ -48,7 +48,19 @@ bun run dev
 
 ## テスト
 
-この内容は [findings.md](findings.md#readme-1) にまとめています。
+単体テストを実行します。
+
+```powershell
+bun run test
+```
+
+Windowsとデスクトップ版Firefoxでは、拡張機能の一時インストール、コンテキストメニュー、クリップボードへのコピーも検証できます。
+
+```powershell
+bun run test:e2e
+```
+
+Firefoxが標準の場所にない場合は、`FIREFOX_BINARY` に `firefox.exe` の絶対パスを指定します。両方を続けて実行する場合は `bun run test:all` を使用します。
 
 ## AMO提出用ZIPを作る
 
@@ -78,11 +90,11 @@ bun run submit:amo
 
 ## その他
 
-この内容は [findings.md](findings.md#readme-2) にまとめています。
+TypeScript、ビルド結果、マニフェストは `bun run lint` で検証できます。拡張機能IDは `src/manifest.json` の `browser_specific_settings.gecko.id` に固定しています。公開後は変更しないでください。
 
 ## 依存更新の自動処理
 
-この内容は [findings.md](findings.md#readme-3) にまとめています。
+Dependabotは毎月28日に更新を確認し、同日18時以降（日本時間）に全チェックが成功したPRを自動で取り込みます。詳しい手順は [更新手順](how-to-update.md#dependabot-pr-の更新) を参照してください。
 
 ## 開発時の参照先
 

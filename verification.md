@@ -1,5 +1,13 @@
 # 検証手順
 
+## 2026-11-04: PR #8 の依存更新
+
+- npm registry の node-forge 1.4.3 と上流の差分を確認した。1.4.1以降は RSA DigestInfo を正規DERと照合し、1.4.3では Ed25519 署名や証明書の制約検証なども修正している。[上流の変更履歴](https://github.com/digitalbazaar/forge/blob/v1.4.3/CHANGELOG.md) を参照。
+- mainに取り込まれた 1.4.2 と監査対策を引き継ぎ、1.4.3 と web-ext 10.8.0 を固定インストールした。正常な署名と不正な入れ子要素の回帰、依存監査の限定判定、単体テスト57件が成功した。
+- 書式・型検査、web-ext lint（エラー・警告0件）、拡張機能ビルド、AMO用ZIPとソースアーカイブの生成に成功し、両アーカイブの内容を確認した。Firefoxのクリップボード操作は隔離されたWindows CIで確認する。
+- `bun audit` は既存の deepmerge 4.3.1 と minimatch 3.1.5 の2件を報告する。`bun run audit:patched` は前者のパッチ・両マージ経路、後者のソース・非増幅を検証し、他の警告を拒否する。
+- 旧PRで記録した2026-10-05時点の監査失敗は node-forge 1.4.0 に修正版がなかったためだった。修正版のない間も web-ext の lint・XPI生成・Mozilla署名の経路は維持した。
+
 ## 2026-10-31: Dependabot 更新と依存監査
 
 - node-forge 1.4.2 で正常な署名構造の受理と不正な要素の拒否を確認した。fast-uri 3.1.9 と undici 7.30.1 を固定し、deepmerge 4.3.1 の両マージ経路の限定パッチ・攻撃回帰と、minimatch 3.1.5 のソース・非増幅を確認した。

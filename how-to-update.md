@@ -68,8 +68,8 @@ Dependabot version update は毎月28日00:00、検証済み PR の自動マー�
 
 監査で脆弱性が見つかったら `bun audit fix` で依存範囲内の推移依存を更新し、残った警告を確認する。既存の `overrides` が安全版への更新を妨げている場合は、公式の修正版を確認して固定値も更新する。overrideがあるだけでは、以後に公開された脆弱性への対策にはならない。
 
-`package.json` の `overrides` は、上流が固定した依存に対して、検証済みの brace-expansion と shell-quote を選ぶために使う。adm-zip と image-size は上流が安全版へ更新したため、個別の固定を外した。上流が安全版を採用したら残る override も減らせるか確認する。更新時は `bun install --lockfile-only --ignore-scripts`、`bun install --frozen-lockfile`、`bun audit` を実行し、該当する lint・型・テスト・ビルドを確認する。問題があれば更新コミットを revert し、lockfile と package.json を同じ版へ戻す。
+`package.json` の `overrides` は、検証済みの brace-expansion、fast-uri、node-forge、undici を選ぶために使う。adm-zip、image-size、shell-quote は上流が安全版を採用したため、個別の固定を外した。上流が安全版を採用したら残る override も減らせるか確認する。更新時は `bun install --lockfile-only --ignore-scripts`、`bun install --frozen-lockfile`、`bun audit` を実行し、該当する lint・型・テスト・ビルドを確認する。問題があれば更新コミットを revert し、lockfile と package.json を同じ版へ戻す。
 
-node-forge は公開修正版 1.4.2 を使用し、正常・不正な署名構造の回帰検査を維持する。deepmerge 4.3.1 は公開修正版が出るまで `patches/deepmerge@4.3.1.patch` を適用する。`bun run audit:patched` はパッチと実ファイルのハッシュ、攻撃回帰、minimatch 3 の実装と非増幅を確認し、対象の2件だけを明示したうえで検証する。他の警告、版の変化、検証失敗は監査を失敗させる。公開修正版が出たらパッチと限定判定を見直す。
+node-forge は公開修正版 1.4.3 を使用し、正常・不正な署名構造の回帰検査を維持する。deepmerge 4.3.1 は公開修正版が出るまで `patches/deepmerge@4.3.1.patch` を適用する。`bun run audit:patched` はパッチと実ファイルのハッシュ、攻撃回帰、minimatch 3 の実装と非増幅を確認し、対象の2件だけを明示したうえで検証する。他の警告、版の変化、検証失敗は監査を失敗させる。公開修正版が出たらパッチと限定判定を見直す。
 
 CI 完了より Dependabot の分類が遅れる場合は、`callback_workflow_file` が指す呼び出し側 workflow を `workflow_dispatch` し、同じ PR 番号・head SHA・全チェックを再確認する。呼び出し側のファイル名を変える際はこの入力も一緒に更新する。
