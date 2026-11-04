@@ -13,17 +13,8 @@ Get-Content -Raw -LiteralPath .\COMMON-AGENTS.md
 4. 全文を読了するまで、ローカル `AGENTS.md` だけを根拠に作業を続けてはならない。読了後は `COMMON-AGENTS.md` を最優先の指針とし、読了直後の最初の進捗報告で全文を読了したことを明示する。
    このファイルでは `amazon-dp-urls` 固有の補足だけを記載する。
 
-## Environment
+## プロジェクト固有の実現手段と知見
 
-- Firefox E2EはユーザーのFirefoxとの競合を避け、隔離したWindows CIで実行する。
-- Dependabot PR間でpackage.jsonとbun.lockが競合したら、対象PRブランチへorigin/mainを通常マージし、双方の依存更新を保持してbun installでlockfileを再生成する。強制pushは不要。
-
-## 依存監査で確定した事項（2026-09-23）
-
-- `bun audit fix` だけでは adm-zip、brace-expansion、image-size の脆弱版が上流の厳密な依存範囲で残る。`package.json` の既存 `overrides` と `bun.lock` を同時に更新し、`bun audit` と関連テスト・ビルドで確認する。上流が安全版を取り込んだ場合は override の必要性を再評価する。
-- 2026-10-02の再監査では、既存brace-expansion override自体が脆弱版5.0.9へ固定していた。bun audit fixでfast-uriとundiciを互換範囲内で更新した後、overrideを安全版へ更新して再インストール・監査する。詳細はverification.mdを参照。
-- Firefox E2E は隔離した Windows GitHub runner のデスクトップで実行し、OS クリップボードを検証する。共通指針のヘッドレス原則に対し、この CI ジョブだけは、headless Firefox のクリックでは OS クリップボードへコピーされなかった実測に基づき、デスクトップ経路を使用する。ユーザーのローカル Firefox は操作しない。ローカル実行時は `finally` で元の内容へ戻し、元が空なら Windows Forms で消去する。CI の使い捨て runner では復元を省く。待機失敗は段階ログで判別する（`tests/e2e/context-menu.e2e.ts`）。
-
-## node-forge監査の上流制約（2026-10-05）
-
-- 最新web-ext 10.7.0はadbkit 3.3.9を介してnode-forge 1.4.0へ依存する。GHSA-86w9-cpqp-85rvは修正版未公開であり、監査成功扱いにしない。web-extはlint・XPI生成・Mozilla署名にも必要なので、監査回避のため削除しない。npm auditのweb-ext 5.1.0降格提案は現行機能の互換性が保証されないため採用しない。公式修正版または依存経路を除去した上流版を確認して更新し、全チェック後に取り込む。
+- 作業開始前に [COMMON-AGENTS.md](COMMON-AGENTS.md) と [findings.md](findings.md) を先頭から末尾まで全文読む。
+- ファイル配置、使用ツール、実行コマンド、対応環境、文書構成、共通方針の例外と調査知見は `findings.md` に記録する。
+- ユーザーの指示、変更禁止、秘密情報の保護、検証・変更履歴を残す義務は共通指針に従い維持する。

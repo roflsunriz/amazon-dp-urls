@@ -6,3 +6,6 @@ amazon-clean-dp-url.zip
 .amo-upload-uuid
 tmp/
 COMMON-AGENTS.md
+
+# エージェントの一時作業メモ
+subagents/
